@@ -1,0 +1,61 @@
+{
+    "index": {
+        "label": "トップページ",
+        "icon": "home",
+        "type": "internal"
+    },
+    "about_us": {
+        "label": "電工研について",
+        "icon": "message",
+        "type": "internal"
+    },
+    "notifications": {
+        "label": "告知",
+        "icon": "notification",
+        "child": {
+            "shinkan": {
+                "label": "新歓情報",
+                "type": "internal"
+            },
+            "mita": {
+                "label": "三田祭情報",
+                "type": "internal"
+            },
+            "yagami": {
+                "label": "矢上祭情報",
+                "type": "internal"
+            }
+        }
+    },
+    "work": {
+        "label": "制作物",
+        "icon": "rocket",
+        "type": "internal"
+    },
+    "contact": {
+        "label": "お問い合わせ",
+        "icon": "mail",
+        "type": "clipboard",
+        "path": "chodenkoken@gmail.com",
+        "success": "メールアドレスがコピーされました.",
+        "failed": "下記のメールアドレスまでご連絡ください."
+    },
+    "external": {
+        "label": "外部リンク",
+        "icon": "link",
+        "child": {
+            "github": {
+                "label": "Github",
+                "type": "external",
+                "icon": "github",
+                "path": "https://github.com/denkoken"
+            },
+            "twitter": {
+                "label": "Twitter",
+                "type": "external",
+                "icon": "twitter",
+                "path": "https://twitter.com/chodenkoken"
+            }
+        }
+    }
+}
