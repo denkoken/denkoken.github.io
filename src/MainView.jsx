@@ -8,7 +8,7 @@ import ArticleView from './ArticleView.jsx';
 import ListView from './ListView.jsx';
 import TOC from './TOC.jsx';
 import PageLayout from './PageLayout.jsx';
-import general from '../data/structure/general.json';
+import general from '../config/general.json';
 
 
 const spinStyle = {

@@ -5,9 +5,9 @@ import {BackTop} from 'antd';
 import MainView from './MainView.jsx';
 
 import common from './common.js';
-import general from '../data/structure/general.json';
-import internalPaths from '../data/structure/internal_paths.json';
-import menuitem from '../data/structure/menuitem.json';
+import general from '../config/general.json';
+import internalPaths from '../config/internal_paths.json';
+import menuitem from '../config/menuitem.json';
 
 
 class App extends React.Component {
@@ -15,7 +15,7 @@ class App extends React.Component {
   constructor(props) {
     super(props);
 
-    // Parse current url query
+    // parse current url query
     this.query = common.getUrlQuery();
 
     // Get topic key

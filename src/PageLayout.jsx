@@ -5,7 +5,7 @@ import {Layout} from 'antd';
 const {Header, Footer} = Layout;
 
 import Menubar from './Menubar.jsx';
-import general from '../data/structure/general.json';
+import general from '../config/general.json';
 
 
 const headerStyle = {

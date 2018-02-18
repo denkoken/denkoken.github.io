@@ -3,7 +3,7 @@ import path from 'path';
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import general from '../data/structure/general.json';
+import general from '../config/general.json';
 
 
 const getBackgroundImageStyle = function(src, height) {

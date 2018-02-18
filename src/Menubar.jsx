@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import {Menu, Icon, notification} from 'antd';
 
 import common from './common.js';
-import menuitem from '../data/structure/menuitem.json';
+import menuitem from '../config/menuitem.json';
 
 
 const notificationDurations = {
