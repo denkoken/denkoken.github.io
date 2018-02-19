@@ -1,0 +1,35 @@
+{
+    "list": [
+        {
+            "src_dir": "ghpages/data/article/work",
+            "dst_path": "ghpages/data/list/work.json"
+        }
+    ],
+    "update": {
+        "dir": [
+            "ghpages/data/article",
+            "ghpages/img"
+        ],
+        "file": [
+            "readme.md",
+            "package.json"
+        ],
+        "except": [
+        ]
+    },
+    "rebuild": {
+        "dir": [
+            "src",
+            "config",
+            "css"
+        ],
+        "file": [
+            "webpack.config.babel.js",
+            "webpack.prod.js",
+            ".eslintrc.json"
+        ],
+        "except": [
+            "config/publish.json"
+        ]
+    }
+}
