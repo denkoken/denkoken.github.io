@@ -56,11 +56,11 @@ export default class EslintHandler {
       }
 
       // On errors are found
-      reject(errors.result.map((result) => {
+      reject(errors.results.map((result) => {
         if (result.errorCount > 0) {
           return {
             path: result.filePath,
-            message: perseMessage(result.message),
+            message: perseMessage(result.messages),
           };
         }
       }));

@@ -124,13 +124,13 @@ const appendToList = function(src, dst) {
 };
 
 const eslintErrorConsole = function(errors) {
-  console.error(Error('eslint is failed'));
   console.log(errors.map((pair) => {
     return [
-      `${pair.message.length} problem is found in "${pair.path}"`,
+      `\n${pair.message.length} problem is found in "${pair.path}"`,
       pair.message.join('\n'),
     ].join('\n');
   }).join('\n\n'));
+  throw Error('eslint is failed');
 };
 
 
@@ -168,7 +168,7 @@ git.diff().
 
     // Execute webpack for production
     if (joblist.rebuild.length > 0) {
-      console.log('rebuild is required');
+      console.log('preparing to build...');
       return webpack.init(webpackConfig).
         then(() => {
           console.log('webpack is running...');
