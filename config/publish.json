@@ -1,14 +1,14 @@
 {
     "list": [
         {
-            "src_dir": "ghpages/data/article/work",
-            "dst_path": "ghpages/data/list/work.json"
+            "src_dir": "docs/data/article/work",
+            "dst_path": "docs/data/list/work.json"
         }
     ],
     "update": {
         "dir": [
-            "ghpages/data/article",
-            "ghpages/img"
+            "docs/data/article",
+            "docs/img"
         ],
         "file": [
             "readme.md",
