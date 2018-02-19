@@ -1,0 +1,39 @@
+{
+    "list": [
+        {
+            "src_dir": "data/article/work",
+            "dst_path": "data/list/work.json"
+        },
+        {
+            "src_dir": "data/article",
+            "dst_path": "temp.json"
+        }
+    ],
+    "update": {
+        "dir": [
+            "data/article",
+            "img"
+        ],
+        "file": [
+            "readme.md",
+            "package.json"
+        ],
+        "except": [
+        ]
+    },
+    "rebuild": {
+        "dir": [
+            "src",
+            "config",
+            "css"
+        ],
+        "file": [
+            "webpack.config.babel.js",
+            "webpack.prod.js",
+            ".eslintrc.json"
+        ],
+        "except": [
+            "config/publish.json"
+        ]
+    }
+}
