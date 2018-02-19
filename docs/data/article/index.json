@@ -6,9 +6,9 @@
             "慶應義塾大学公認団体 超電子工学研究会, ",
             "通称電工研のホームページです.<br>",
             "詳しくは [電工研について]",
-            "(https://denkoken.github.io/?topic=about_us) をご覧ください.",
+            "(./?topic=about_us) をご覧ください.",
             "<br>また、新歓情報は[こちら]",
-            "(https://denkoken.github.io/?topic=shinkan)で公開中です.",
+            "(./?topic=shinkan) で公開中です.",
             "</h4>"
         ],
         "src": "../img/index.jpg",
