@@ -178,7 +178,7 @@ git.diff().
         then(() => {
           console.log('bundle successed');
 
-          return git.add(addlist);
+          return git.add(addlist.concat(config.bundle));
         }).
         catch((err) => {
           throw err;

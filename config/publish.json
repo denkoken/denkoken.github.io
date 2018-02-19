@@ -12,6 +12,7 @@
         ],
         "file": [
             "readme.md",
+            "docs/index.html",
             "package.json"
         ],
         "except": [
@@ -31,5 +32,11 @@
         "except": [
             "config/publish.json"
         ]
-    }
+    },
+    "bundle": [
+        "docs/main.bundle.js",
+        "docs/bundle.css",
+        "docs/main.bundle.js.map",
+        "docs/bundle.css.map"
+    ]
 }
