@@ -1,5 +1,3 @@
-import path from 'path';
-
 import React from 'react';
 import PropTypes from 'prop-types';
 
@@ -89,7 +87,7 @@ ImageHeader.propTypes = {
 
 ImageHeader.defaultProps = {
   height: '400px',
-  src: path.resolve(general.github_url, general.default_image_url),
+  src: general.default_image_url,
   title: 'No title',
 };
 
