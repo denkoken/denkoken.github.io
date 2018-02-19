@@ -1,5 +1,6 @@
 import React from 'react';
 import {render} from 'react-dom';
+import path from 'path';
 
 import {BackTop} from 'antd';
 import MainView from './MainView.jsx';
@@ -38,7 +39,8 @@ class App extends React.Component {
 
   componentDidMount() {
     // Get json data
-    common.fetchJSON(general.github_url + internalPaths[this.state.topic]).
+    common.fetchJSON(path.
+      join(general.github_url, internalPaths[this.state.topic])).
       then((json) => {
 
         // The case of we got list data and query give us list index
@@ -46,7 +48,7 @@ class App extends React.Component {
         if (json instanceof Array &&
           json[Number(this.query.list)] !== undefined) {
           const idx = Number(this.query.list);
-          common.fetchJSON(general.github_url + json[idx].path).
+          common.fetchJSON(path.join(general.github_url, json[idx].path)).
             then((data) => {
               this.setState({data: data});
             }).
