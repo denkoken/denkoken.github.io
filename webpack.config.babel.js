@@ -72,6 +72,6 @@ export default {
   },
 
   plugins: [
-    new ExtractTextPlugin('bunlde.css'),
+    new ExtractTextPlugin('bundle.css'),
   ],
 };
