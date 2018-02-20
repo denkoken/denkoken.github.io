@@ -40,17 +40,14 @@ Webページの基本的な設定用のファイルです。
 変更を反映するにはリビルドが必要です。
 
 必要なパラメータは以下の通りです。
+
 | key | value type | description |
 | --- | ---------- | ----------- |
 | `name` | String | Webページのタイトルに表示される文字列です |
-| `footer` | dict | Webページのフッターに表示される文字列です。
-フォーマットはfooter.name &copy;footer.yearです  |
-| `load_json_failed` | String | jsonデータの動的読み込みに失敗したときに
-表示される文字列です |
-| `github_url` | String | 取得すべきデータが配置されているgithub上のルートパス
-です |
-| `default_image_url` | String | 記事やリストでヘッダ画像の指定がなかったときに
-表示される画像の**docsディレクトリからの相対パス**です |
+| `footer` | dict | Webページのフッターに表示される文字列です。フォーマットはfooter.name &copy;footer.yearです  |
+| `load_json_failed` | String | jsonデータの動的読み込みに失敗したときに表示される文字列です |
+| `github_url` | String | 取得すべきデータが配置されているgithub上のルートパスです |
+| `default_image_url` | String | 記事やリストでヘッダ画像の指定がなかったときに表示される画像の**docsディレクトリからの相対パス**です |
 
 ### `config/internal_paths.json`
 Webページのクエリ文字列において`topic`で指定された値と読み込むべき
@@ -70,6 +67,7 @@ Webページのヘッダに表示されるメニューバーの項目の設定�
 変更を反映するにはリビルドが必要です。
 
 メニュー項目を設定するパラメータは以下の通りです。
+
 | key | value type | description |
 | --- | ---------- | ----------- |
 | `label` | String | メニュー項目に表示される文字列です |
@@ -87,6 +85,7 @@ Webページのヘッダに表示されるメニューバーの項目の設定�
 クリップボードへのコピーが失敗したときに表示する文字列です |
 
 パラメータ`type`には次の3つが指定可能です。
+
  * `internal` : 内部リンク
  * `external` : 外部リンク
  * `clipboard` : クリップボードへのコピー
@@ -103,31 +102,28 @@ Webページのヘッダに表示されるメニューバーの項目の設定�
 詳しい処理内容については後述の`publish.js`を参照してください。
 
 利用可能なパラメータは次の通りです。
+
 | key | value type | description |
 | --- | ---------- | ----------- |
-| `list` | list | 記事を配置するディレクトリとその記事を含む記事一覧の組を
-表すdictのlistです。dictのフォーマットは後述 |
-| `update` | dict | 変更されていた場合に`git add`するファイルを指定します。
-dictのフォーマットは後述 |
-| `rebuild` | dict | 変更されていた場合にリビルドを実行し`git add`するファイルを
-指定します。dictのフォーマットは後述 |
-| `bundle` | list | `publish.js`が実行された結果リビルドが行われた場合
-新たに`git add`されるファイル一覧を指定します |
+| `list` | list | 記事を配置するディレクトリとその記事を含む記事一覧の組を表すdictのlistです。dictのフォーマットは後述 |
+| `update` | dict | 変更されていた場合に`git add`するファイルを指定します。dictのフォーマットは後述 |
+| `rebuild` | dict | 変更されていた場合にリビルドを実行し`git add`するファイルを指定します。dictのフォーマットは後述 |
+| `bundle` | list | `publish.js`が実行された結果リビルドが行われた場合新たに`git add`されるファイル一覧を指定します |
 
 パラメータ`list`が持つべきパラメータは次のとおりです
+
 | key | value type | description |
 | --- | ---------- | ----------- |
 | `dst_path` | String | 記事一覧のデータが格納される`json`ファイル |
 | `src_dir` | String | 記事一覧に追加するファイルが格納されるディレクトリ |
 
 パラメータ`update`, `rebuild`が持つべきパラメータは次の通りです。
+
 | key | value type | description |
 | --- | ---------- | ----------- |
-| dir | list | このlist内のディレクトリ内のファイルすべてが
-処理を実行する対象となる |
-| file | list | このlistに記述されたファイルが処理を実行する対象となる |
-| except | list | このlistに記述されたファイルは`dir`で指定した
-ディレクトリ内にあっても処理は実行されない |
+| `dir` | list | このlist内のディレクトリ内のファイルすべてが処理を実行する対象となる |
+| `file` | list | このlistに記述されたファイルが処理を実行する対象となる |
+| `except` | list | このlistに記述されたファイルは`dir`で指定したディレクトリ内にあっても処理は実行されない |
 
 ## `publish.js`
 `publish.js`は変更したファイルのeslint、git addやeslint、
@@ -135,6 +131,7 @@ dictのフォーマットは後述 |
 実行には`bebel-cli`が必要となります。
 
 `config/publish.json`で指定したファイルに対しそれぞれ次の処理を行います。
+
 1. 以前のcommit以降変更または追加のあったファイルについて、
 `list`, `update`, `rebuild`の対象であるものを抽出します。
 2. 抽出したファイルの内、`.js`, `.jsx`ファイルに対しeslintを実行します。
