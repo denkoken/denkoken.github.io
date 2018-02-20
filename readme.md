@@ -32,6 +32,10 @@ babel-node publish.js
 ```
 
 
+## React Component の繋がりについて
+
+![図](https://raw.githubusercontent.com/denkoken/denkoken.github.io/master/man/component.jpg)
+
 ## 設定ファイルについて
 設定ファイルは`config`ディレクトリに`.json`ファイルとして配置してあります。
 
