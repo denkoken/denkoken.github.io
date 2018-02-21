@@ -100,9 +100,14 @@ const createJoblist = function(files) {
 
 const appendToList = function(src, dst) {
   const srcJson = JSON.parse(fs.readFileSync(src, 'utf8'));
-  const dstJson = fs.existsSync(dst) ?
+  let dstJson = fs.existsSync(dst) ?
     JSON.parse(fs.readFileSync(dst, 'utf8')) :
     [];
+
+  // remove src from dst list if already listed in dst
+  dstJson = dstJson.filter((obj) => {
+    return obj.path !== src;
+  });
 
   // Get article infomation.
   const title = srcJson[Object.keys(srcJson)[0]].title;
