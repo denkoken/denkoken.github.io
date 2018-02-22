@@ -36,6 +36,75 @@ babel-node publish.js
 
 ![図](https://raw.githubusercontent.com/denkoken/denkoken.github.io/master/man/component.jpg)
 
+
+## 記事の書き方について
+記事は`.json`ファイルで管理されます。  
+該当する`.json`ファイルや画像ファイルを変更してもwebpackでbuildする必要はありません。  
+記事を書き換えた場合や追加しただけの場合はそのままcommitしてください。  
+尚、`config/internal_paths.json`を書き換えた場合はその限りではありません。  
+
+### jsonの書き方
+以下のように記事を並べると複数の記事となります。
+
+```
+{
+    "kizi_1": {
+      ...
+    },
+    "kizi_2": {
+      ...
+    },
+    "tokusyu_na_kizi": {
+      ...
+    },
+    ...
+    "iten_no_oshirase": {
+      ...
+    }
+}
+```
+
+各記事のパラメータは以下の通りです。
+
+| key | value type | description |
+| --- | ---------- | ----------- |
+| `title` | String | 記事のタイトル |
+| `body` | Array of String | 記事の本文。Markdownでかけます。見やすさのためにArrayとなっていますが、全て連結されるのでどこで区切っても変わりません。 |
+| `src` | String | headerとなる画像のパス。著作権フリーの画像を使いましょう。 |
+
+#### 例
+```
+{
+    "main": {
+        "title": "超電子工学研究会",
+        "body": [
+            "<h4>",
+            "慶應義塾大学公認団体 超電子工学研究会, ",
+            "通称電工研のホームページです.<br>",
+            "詳しくは <a href=\"./?topic=about_us\">電工研について</a>",
+            "をご覧ください.<br>",
+            "また、新歓情報は<a href=\"./?topic=shinkan\">こちら</a>",
+            "で公開中です.",
+            "</h4>"
+        ],
+        "src": "img/index.jpg"
+    }
+}
+```
+
+### jsonの配置場所
+`config/internal_paths.json`で管理されます。
+今は以下の通りになっています。  
+
+| 場所 | key | デフォルトのpath(書き換えられます) |
+| --- | --- | --- |
+| トップページ | `index` | `data/article/index.json` |
+| 電工研について | `about_us` | `data/article/about_us.json` |
+| 告知 > 新歓情報 | `shinkan` | `data/article/shinkan.json` |
+| 告知 > 三田祭情報 | `mita` | `data/article/mita.json` |
+| 告知 > 矢上祭情報 | `yagami` | `data/article/yagami.json` |
+| 制作物 | `work` | `data/list/work.json` |
+
 ## 設定ファイルについて
 設定ファイルは`config`ディレクトリに`.json`ファイルとして配置してあります。
 
