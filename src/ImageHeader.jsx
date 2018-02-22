@@ -61,7 +61,7 @@ class ImageHeader extends React.PureComponent {
       <div
         style={
           getBackgroundImageStyle(
-            path.join(general.github_url, 'docs', this.state.src),
+            path.join(general.github_url, this.state.src),
             this.state.height
           )
         }
