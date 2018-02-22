@@ -40,7 +40,6 @@ babel-node publish.js
 ## 記事の書き方について
 記事は`.json`ファイルで管理されます。  
 該当する`.json`ファイルや画像ファイルを変更してもwebpackでbuildする必要はありません。  
-記事を書き換えた場合や追加しただけの場合はそのままcommitしてください。  
 尚、`config/internal_paths.json`を書き換えた場合はその限りではありません。  
 
 ### jsonの書き方
