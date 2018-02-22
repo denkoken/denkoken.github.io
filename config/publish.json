@@ -1,18 +1,18 @@
 {
     "list": [
         {
-            "src_dir": "docs/data/article/work",
-            "dst_path": "docs/data/list/work.json"
+            "src_dir": "data/article/work",
+            "dst_path": "data/list/work.json"
         }
     ],
     "update": {
         "dir": [
-            "docs/data/article",
-            "docs/img"
+            "data/article",
+            "img"
         ],
         "file": [
             "readme.md",
-            "docs/index.html",
+            "index.html",
             "package.json"
         ],
         "except": [
@@ -34,9 +34,9 @@
         ]
     },
     "bundle": [
-        "docs/main.bundle.js",
-        "docs/bundle.css",
-        "docs/main.bundle.js.map",
-        "docs/bundle.css.map"
+        "dst/main.bundle.js",
+        "dst/bundle.css",
+        "dst/main.bundle.js.map",
+        "dst/bundle.css.map"
     ]
 }
