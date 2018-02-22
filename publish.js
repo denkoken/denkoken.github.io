@@ -203,7 +203,7 @@ git.diff().
     console.log('\n');
     console.log(` >> git commit -m "${message}"`);
 
-    return git.push('origin', 'master');
+    return git.push('origin', 'develop');
   }).
   catch((err) => {
     console.error(err);

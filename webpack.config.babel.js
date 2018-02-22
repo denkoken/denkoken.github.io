@@ -10,7 +10,7 @@ const themeVariables = lessToJs(fs.readFileSync(path.join(
   './css/ant-default-vars.less'
 ), 'utf8'));
 const src = path.resolve(__dirname, 'src');
-const dst = path.resolve(__dirname, 'docs');
+const dst = path.resolve(__dirname, 'dst');
 
 
 export default {
