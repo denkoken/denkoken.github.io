@@ -1,8 +1,0 @@
-{
-    "index": "data/article/index.json",
-    "about_us": "data/article/about_us.json",
-    "shinkan": "data/article/shinkan.json",
-    "mita": "data/article/mita.json",
-    "yagami": "data/article/yagami.json",
-    "work": "data/list/work.json"
-}
