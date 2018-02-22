@@ -1,3 +1,4 @@
+import path from 'path';
 import React from 'react';
 import PropTypes from 'prop-types';
 
@@ -54,9 +55,16 @@ class ImageHeader extends React.PureComponent {
   }
 
   render() {
+    console.log(this.state.src);
+    console.log(path.join(general.github_url, this.state.src));
     return (
       <div
-        style={getBackgroundImageStyle(this.state.src, this.state.height)}
+        style={
+          getBackgroundImageStyle(
+            path.join(general.github_url, 'docs', this.state.src),
+            this.state.height
+          )
+        }
       >
         <div
           style={foregroundBoxStyle}
