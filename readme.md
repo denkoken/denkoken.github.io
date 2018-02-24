@@ -34,7 +34,7 @@ babel-node publish.js
 
 ## React Component の繋がりについて
 
-![図](https://raw.githubusercontent.com/denkoken/denkoken.github.io/master/man/component.jpg)
+![図](https://raw.githubusercontent.com/denkoken/denkoken.github.io/develop/man/component.jpg)
 
 
 ## 記事の書き方について
