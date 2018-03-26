@@ -3,11 +3,11 @@
         "title": "ホームページを作りました",
         "body": [
             "無料で静的なウェブページを開設できる,",
-            "Github pagesを利用して電工研のホームページを作りました。  \n",
+            "Github pagesを利用して電工研のホームページを作りました.  \n",
             "ホームページはJavascriptのライブラリの一つである",
             "[React.js](https://reactjs.org/) で作成し, UIには",
             "[Ant Design of React](https://ant.design/docs/react/introduce) ",
-            "を利用しました.  また, Javascriptのコード検証ツールである",
+            "を利用しました.  \nまた, Javascriptのコード検証ツールである",
             "[eslint](https://eslint.org/) によるチェック, ",
             "[webpack](https://webpack.js.org/)によるWebページの生成, ",
             "記事のアップロードをファイルの変更状況に応じて行うスクリプト",
