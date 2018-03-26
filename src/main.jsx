@@ -66,14 +66,12 @@ class App extends React.Component {
   }
 
   handleSelect(newQuery) {
-    const keys = Object.keys(newQuery);
+    if (newQuery.topic === this.query.topic) {
+      common.setUrlQuery(Object.assign(this.query, newQuery));
 
-    // Update query
-    for (let i = 0; i < keys.length; i += 1) {
-      this.query[keys[i]] = newQuery[keys[i]];
+    } else {
+      common.setUrlQuery(newQuery);
     }
-
-    common.setUrlQuery(this.query);
   }
 
   render() {
