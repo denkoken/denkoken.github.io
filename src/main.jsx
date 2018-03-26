@@ -66,7 +66,7 @@ class App extends React.Component {
   }
 
   handleSelect(newQuery) {
-    if (newQuery.topic === this.query.topic) {
+    if (newQuery.topic === undefined) {
       common.setUrlQuery(Object.assign(this.query, newQuery));
 
     } else {
