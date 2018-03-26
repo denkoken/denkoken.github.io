@@ -1,0 +1,26 @@
+{
+    "main": {
+        "title": "ホームページを作りました",
+        "body": [
+            "無料で静的なウェブページを開設できる,",
+            "Github pagesを利用して電工研のホームページを作りました。  ",
+            "ホームページはJavascriptのライブラリの一つである",
+            "[React.js](https://reactjs.org/) で作成し, UIには",
+            "[Ant Design of React](https://ant.design/docs/react/introduce) ",
+            "を利用しました.  また, Javascriptのコード検証ツールである",
+            "[eslint](https://eslint.org/) によるチェック, ",
+            "[webpack](https://webpack.js.org/)によるWebページの生成, ",
+            "記事のアップロードをファイルの変更状況に応じて行うスクリプト",
+            "を作成し, 継続メンテナンス可能なデザインを作りました.",
+            "はじめは[webpack](https://webpack.js.org/) ",
+            "により生成されたWebページのファイルサイズが非常に大きく, ",
+            "ページのロードに時間がかかっていましたが, ",
+            "JavascriptとCSSファイルの分割や最適化パッケージの利用などの",
+            "試行錯誤の末, Webページのファイルサイズを小さくすることに",
+            "成功しました.  ",
+            "詳しいコードは[電工研のgithubのレポジトリ]",
+            "(https://github.com/denkoken/denkoken.github.io/)",
+            "にて公開しています."
+        ]
+    }
+}
