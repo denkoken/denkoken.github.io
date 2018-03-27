@@ -26,7 +26,7 @@ const webpack = new WebpackHandler();
 
 const notFound = -1;
 
-const updateUrlList = [];
+const tweetList = [];
 
 
 const shouldAppendList = function(src) {
@@ -186,7 +186,7 @@ const jsonpathToUrl = function(jsonpath) {
       `&list=${listIndex}`
   }`;
 
-  return path.join(homepage_root_url, query);
+  return homepage_root_url + query;
 };
 
 git.diff().
@@ -246,7 +246,10 @@ git.diff().
     files.forEach((file) => {
       // add tweet list when json file is update
       if (path.parse(file).ext === '.json') {
-        updateUrlList.push(jsonpathToUrl(file));
+        const url = jsonpathToUrl(file);
+        if (url !== null) {
+          tweetList.push(TwitterHandler(url));
+        }
       }
 
       console.log(` >> git add "${file}"`);
@@ -259,6 +262,16 @@ git.diff().
     console.log(` >> git commit -m "${message}"`);
 
     return git.push('origin', 'develop');
+  }, (err) => {
+    console.log(err);
+  }).
+  then(() => {
+    return Promise.all(tweetList);
+  }).
+  then((tweets) => {
+    tweets.forEach(({text}) => {
+      console.log(` >> new tweet : "${text}"`);
+    });
   }).
   catch((err) => {
     console.error(err);

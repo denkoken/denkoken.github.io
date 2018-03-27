@@ -13,7 +13,7 @@ export default function(url) {
     client.post('statuses/update', {status: `${config.content}\n ${url}`},
       (err, tweet) => {
         // error occur
-        if (err === null) {
+        if (err !== null) {
           reject(err);
 
         // success
