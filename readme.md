@@ -216,9 +216,38 @@ Webpackに失敗した場合処理はここで終了しますので、
 ファイルに対し`git add`を実行します。
 6. commitします
 7. `master`ブランチにプッシュします。
-**pushにユーザー名、パスワードの入力が不要な状態にしておく必要があります。**
+~~pushにユーザー名、パスワードの入力が不要な状態にしておく必要があります。~~
+pushにユーザー名、パスワードの入力が不要な状態にしておくことを推奨します。
 
 処理の終了後は念の為`git show`などで最新のcommitを確認してください。
+
+
+## Twitter連携について
+`npm run publish`を実行し新たに記事が更新された場合、
+`config/twitter.json`を適切に設定しておくことで
+電工研のTwitterアカウントで自動ツイートすることが可能です。  
+**Twitterアカウント不正アクセス防止のため、
+`git clone`しただけでは有効化されません。**  
+
+`config/twitter.json`の設定は以下のとおりに行ってください。
+
+1. [こちら](https://apps.twitter.com/app/7752990/keys)にアクセスし、
+電工研のTwitterアカウントにログインする。
+2. 表示されたページを見て、次のとおりに`config/twitter.json`を入力する。
+    * `comsumer_key`に"Comsumer Key (API Key)"として表示された文字列をコピー
+    * `comsumer_secret_key`に"Comsumer Secret (API Secret)"として表示された
+    文字列をコピー
+    * `access_token_key`に"Access Token"として表示された文字列をコピー
+    (改行不要)
+    * `access_token_secret`に"Access Token Secret"として表示された文字列を
+    コピー
+3. 適宜`content`を編集してホームページ更新時の文言を変える。
+
+
+ツイートは次のようなフォーマットでなされます。
+>>  ${`config/twitter.json`の`content`に書かれた内容}
+>>  ${更新されたページのURL}
+
 
 ## その他
 Linterとして`eslint`を使用します。

@@ -6,5 +6,6 @@
     },
     "load_json_failed": "データの取得に失敗しました.",
     "github_url": "https://raw.githubusercontent.com/denkoken/denkoken.github.io/develop",
+    "homepage_root_url": "https://denkoken.github.io/",
     "default_image_url": "img/index_sm.jpg"
 }

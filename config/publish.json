@@ -29,7 +29,8 @@
             ".eslintrc.json"
         ],
         "except": [
-            "config/publish.json"
+            "config/publish.json",
+            "config/twitter.json"
         ]
     },
     "bundle": [

@@ -7,9 +7,13 @@ import 'date-utils';
 import EslintHandler from './handler/EslintHandler.js';
 import GitHandler from './handler/GitHandler.js';
 import WebpackHandler from './handler/WebpackHandler.js';
+import TwitterHandler from './handler/TwitterHandler.js';
+
+import internal_paths from './config/internal_paths.json';
+import {homepage_root_url} from './config/general.json';
+import config from './config/publish.json';
 
 import webpackConfig from './webpack.prod.js';
-import config from './config/publish.json';
 import rules from './.eslintrc.json';
 
 
@@ -21,6 +25,8 @@ const git = new GitHandler('./');
 const webpack = new WebpackHandler();
 
 const notFound = -1;
+
+const updateUrlList = [];
 
 
 const shouldAppendList = function(src) {
@@ -138,6 +144,50 @@ const eslintErrorConsole = function(errors) {
   throw Error('eslint is failed');
 };
 
+const jsonpathToUrl = function(jsonpath) {
+  let listIndex = null;
+  let topic_path = null;
+  let topic = null;
+
+  // check json path is located in list branch
+  config.list.forEach(({src_dir, dst_path}) => {
+    if (path.dirname(jsonpath) === src_dir) {
+
+      // get list index
+      JSON.parse(fs.readFileSync(dst_path, 'utf8')).forEach(({path}, idx) => {
+        if (path === jsonpath) {
+          listIndex = idx;
+        }
+      });
+
+      // set list path
+      topic_path = dst_path;
+    }
+  });
+
+  topic_path = topic_path === null ?
+    jsonpath :
+    topic_path;
+
+  // search topic
+  Object.keys(internal_paths).map((key) => {
+    if (internal_paths[key] === topic_path) {
+      topic = key;
+    }
+  });
+
+  if (topic === null) {
+    return null;
+  }
+
+  const query = `?topic=${topic}${
+    listIndex === null ?
+      '' :
+      `&list=${listIndex}`
+  }`;
+
+  return path.join(homepage_root_url, query);
+};
 
 git.diff().
   then((diff) => {
@@ -194,6 +244,11 @@ git.diff().
   }, eslintErrorConsole).
   then((files) => {
     files.forEach((file) => {
+      // add tweet list when json file is update
+      if (path.parse(file).ext === '.json') {
+        updateUrlList.push(jsonpathToUrl(file));
+      }
+
       console.log(` >> git add "${file}"`);
     });
 
