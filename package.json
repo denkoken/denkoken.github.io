@@ -7,6 +7,7 @@
     "test": "eslint --fix src/*",
     "watch": "babel-node ./node_modules/webpack/bin/webpack.js -d --watch",
     "publish": "babel-node publish.js",
+    "twitter": "babel-node init.js",
     "analyze": "babel-node ./node_modules/webpack/bin/webpack.js --json | webpack-bundle-analyzer"
   },
   "author": "",

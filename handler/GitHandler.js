@@ -1,6 +1,7 @@
 'use strict';
 
 import simpleGit from 'simple-git';
+import path from 'path';
 
 
 export default class GitHandler {
@@ -67,6 +68,21 @@ export default class GitHandler {
         // On success
         if (err === null) {
           resolve(result);
+        }
+
+        // On failed
+        reject(err);
+      });
+    });
+  }
+
+  clone(repo_path) {
+    return new Promise((resolve, reject) => {
+      this._git.clone(repo_path, (err, result) => {
+
+        // On success
+        if (err === null) {
+          resolve(path.parse(repo_path).name);
         }
 
         // On failed
