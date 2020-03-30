@@ -3,14 +3,8 @@
       "title": "自作キーボード",
       "body": [
         "<h2> 自作キーボードを作りました</h2>",
-        "<figure >",
         "<img src=\"https://raw.githubusercontent.com/denkoken/denkoken.github.io/develop/img/work/19040302/pic0.jpg\" alt=\"外観\" width=\"60%\">",
-        "<figcaption style=\"text-align:center\">外観</figcaption>",
-        "</figure>",
-        "<figure text-align:center>",
-        "<img src=\"https://raw.githubusercontent.com/denkoken/denkoken.github.io/develop/img/work/19040302/pic1.jpg\" alt=\"内観\" width=\"60%\">",
-        "<figcaption style=\"text-align:center\">内観</figcaption>",
-        "</figure>"
+        "<img src=\"https://raw.githubusercontent.com/denkoken/denkoken.github.io/develop/img/work/19040302/pic1.jpg\" alt=\"内観\" width=\"60%\">"
       ]
     }
   }
