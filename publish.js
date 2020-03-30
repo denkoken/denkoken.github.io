@@ -245,12 +245,12 @@ git.diff().
   then((files) => {
     files.forEach((file) => {
       // add tweet list when json file is update
-      if (path.parse(file).ext === '.json') {
-        const url = jsonpathToUrl(file);
-        if (url !== null) {
-          tweetList.push(TwitterHandler(url));
-        }
-      }
+      // if (path.parse(file).ext === '.json') {
+      //   const url = jsonpathToUrl(file);
+      //   if (url !== null) {
+      //     tweetList.push(TwitterHandler(url));
+      //   }
+      // }
 
       console.log(` >> git add "${file}"`);
     });
@@ -265,14 +265,14 @@ git.diff().
   }, (err) => {
     console.log(err);
   }).
-  then(() => {
-    return Promise.all(tweetList);
-  }).
-  then((tweets) => {
-    tweets.forEach(({text}) => {
-      console.log(` >> new tweet : "${text}"`);
-    });
-  }).
+  // then(() => {
+  //   return Promise.all(tweetList);
+  // }).
+  // then((tweets) => {
+  //   tweets.forEach(({text}) => {
+  //     console.log(` >> new tweet : "${text}"`);
+  //   });
+  // }).
   catch((err) => {
     console.error(err);
   });
