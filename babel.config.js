@@ -2,13 +2,15 @@ const presets =  [
   [
     '@babel/preset-env',
     {
-      'modules': false,
       'useBuiltIns': 'entry',
-      'targets': [
-        '>0.25% in JP',
-        'not ie <= 10',
-        'not op_mini all'
-      ],
+      'targets': {
+        'browsers': [
+          '>0.25% in JP',
+          'not ie <= 10',
+          'not op_mini all'
+        ],
+        'node': 'current',
+      },
       'corejs': 3
     }
   ],
