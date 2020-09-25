@@ -7,7 +7,7 @@ import 'date-utils';
 import EslintHandler from './handler/EslintHandler.js';
 import GitHandler from './handler/GitHandler.js';
 import WebpackHandler from './handler/WebpackHandler.js';
-import TwitterHandler from './handler/TwitterHandler.js';
+// import TwitterHandler from './handler/TwitterHandler.js';
 
 import internal_paths from './config/internal_paths.json';
 import {homepage_root_url} from './config/general.json';
@@ -26,7 +26,7 @@ const webpack = new WebpackHandler();
 
 const notFound = -1;
 
-const tweetList = [];
+// const tweetList = [];
 
 
 const shouldAppendList = function(src) {

@@ -1,22 +1,26 @@
 'use strict';
 
-import webpack from 'webpack';
-import merge from 'webpack-merge';
-import UglifyJSPlugin from 'uglifyjs-webpack-plugin'
+// Configuration for Release
 
-import common from './webpack.config.babel.js';
+const {merge} = require('webpack-merge');
+const common = require('./webpack.common.js');
+const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
 
-const prod = {'process.env.NODE_ENV': JSON.stringify('production')};
-
-export default merge(
-  common,
-  {
-    devtool: 'source-map',
-    plugins: [
-      new UglifyJSPlugin({
-        sourceMap: true,
-      }),
-      new webpack.DefinePlugin(prod),
-    ],
-  }
-);
+module.exports = merge(
+    common,
+    {
+      mode: 'production',
+      optimization: {
+        minimizer: [
+          new OptimizeCSSAssetsPlugin({}),
+          new TerserPlugin({
+            terserOptions: {
+              keep_classnames: true,
+              drop_console: true
+            }
+          })
+        ]
+      }
+    }
+  );
