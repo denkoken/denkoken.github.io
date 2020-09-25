@@ -2,10 +2,10 @@
 
 // Common Configuration
 
-const path = require('path');
-const fs = require('fs');
-const lessToJs = require('less-vars-to-js');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+import path from 'path';
+import fs from 'fs';
+import lessToJs from 'less-vars-to-js';
+import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 
 const themeVariables = lessToJs(fs.readFileSync(path.join(
   __dirname,
@@ -15,7 +15,7 @@ const themeVariables = lessToJs(fs.readFileSync(path.join(
 const src = path.resolve(__dirname, 'src');
 const dst = path.resolve(__dirname, 'dst');
 
-module.exports = {
+export default {
   entry: {main: path.resolve(src, 'main.jsx')},
 
   output: {

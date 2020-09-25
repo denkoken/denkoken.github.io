@@ -2,12 +2,12 @@
 
 // Configuration for Release
 
-const {merge} = require('webpack-merge');
-const common = require('./webpack.common.js');
-const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
-const TerserPlugin = require('terser-webpack-plugin');
+import {merge} from 'webpack-merge';
+import common from './webpack.common';
+import OptimizeCSSAssetsPlugin from 'optimize-css-assets-webpack-plugin';
+import TerserPlugin from 'terser-webpack-plugin';
 
-module.exports = merge(
+export default merge(
     common,
     {
       mode: 'production',

@@ -2,10 +2,10 @@
 
 // Configuration for Development
 
-const {merge} = require('webpack-merge');
-const common = require('./webpack.common');
+import {merge} from 'webpack-merge';
+import common from './webpack.common';
 
-module.exports = merge(
+export default merge(
     common, 
     {
       mode: 'development',
