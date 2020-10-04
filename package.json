@@ -6,7 +6,7 @@
   "scripts": {
     "lint": "eslint --fix src/*",
     "watch": "babel-node ./node_modules/webpack/bin/webpack.js --config webpack.dev.js --watch",
-    "devbuild": "babel-node ./node_modules/webpack/bin/webpack.js --config webpack.dev.js",
+    "build:dev": "babel-node ./node_modules/webpack/bin/webpack.js --config webpack.dev.js",
     "build": "babel-node ./node_modules/webpack/bin/webpack.js --config webpack.prod.js",
     "publish": "babel-node publish.js",
     "analyze": "babel-node ./node_modules/webpack/bin/webpack.js --json | webpack-bundle-analyzer",
