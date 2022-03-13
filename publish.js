@@ -18,7 +18,7 @@ import rules from './.eslintrc.json';
 
 
 const eslint = new EslintHandler({
-  rules: rules,
+  overrideConfigFile: "./.eslintrc.json",
   fix: true,
 });
 const git = new GitHandler('./');
@@ -135,12 +135,13 @@ const appendToList = function(src, dst) {
 };
 
 const eslintErrorConsole = function(errors) {
-  console.log(errors.map((pair) => {
-    return [
-      `\n${pair.message.length} problem is found in "${pair.path}"`,
-      pair.message.join('\n'),
-    ].join('\n');
-  }).join('\n\n'));
+  console.log(errors);
+  // console.log(errors.map((pair) => {
+  //   return [
+  //     `\n${pair.message.length} problem is found in "${pair.path}"`,
+  //     pair.message.join('\n'),
+  //   ].join('\n');
+  // }).join('\n\n'));
   throw Error('eslint is failed');
 };
 

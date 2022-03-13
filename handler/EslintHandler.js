@@ -1,6 +1,6 @@
 'use strict';
 
-import {CLIEngine} from 'eslint';
+import {ESLint} from 'eslint';
 
 
 const paddingLine = 3;
@@ -37,7 +37,7 @@ const perseMessage = (message) => {
 export default class EslintHandler {
 
   constructor(props) {
-    this._eslint = new CLIEngine(props);
+    this._eslint = new ESLint(props);
   }
 
   check(files) {
@@ -45,26 +45,18 @@ export default class EslintHandler {
       return (/\.js[x]?$/).test(src);
     });
 
-    return new Promise((resolve, reject) => {
+    // Apply eslint
+    return this._eslint.lintFiles(lintlist)
+      .then(lintResults => {
+        lintResults = lintResults.filter(lintResult => lintResult.errorCount > 0);
 
-      // Apply eslint
-      const errors = this._eslint.executeOnFiles(lintlist);
+        // No error is found
+        if (lintResults.length === 0) return files;
 
-      // No error is found
-      if (errors.errorCount === 0) {
-        resolve(files);
-      }
-
-      // On errors are found
-      reject(errors.results.map((result) => {
-        if (result.errorCount > 0) {
-          return {
-            path: result.filePath,
-            message: perseMessage(result.messages),
-          };
-        }
-      }));
-    });
+        // No error is found
+        return lintResults.map(e => {
+          return {path: e.filePath, message: perseMessage(e.messages)};
+        });
+      });
   }
-
 }
