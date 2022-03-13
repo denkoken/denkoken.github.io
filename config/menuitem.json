@@ -4,13 +4,13 @@
         "icon": "home",
         "type": "internal"
     },
-    "shinkan": {
-        "label": "新歓情報",
+    "about_us": {
+        "label": "電工研について",
         "icon": "message",
         "type": "internal"
     },
-    "about_us": {
-        "label": "電工研について",
+    "shinkan": {
+        "label": "新歓情報",
         "icon": "message",
         "type": "internal"
     },
